@@ -7,7 +7,7 @@ def checkmate(board: str):
             print("Error")
             return
 
-    king_pos = None
+    king_pos = None  # หาตำแหน่งของคิงว่าอยู่ไหน
     for i in range(size):
         for j in range(len(board[i])):
             if board[i][j] == 'K':
@@ -22,8 +22,8 @@ def checkmate(board: str):
 
     def in_bounds(x, y):
         return 0 <= x < size and 0 <= y < len(board[x])
-
-    def is_pawn_attacking():
+    
+    def is_pawn_attacking(): # ตรวจ Pawn (P) โจมตี
         x, y = king_pos
         for dx, dy in [(-1, -1), (-1, 1)]:
             nx, ny = x + dx, y + dy
@@ -31,7 +31,7 @@ def checkmate(board: str):
                 return True
         return False
 
-    def is_bishop_attacking():
+    def is_bishop_attacking(): # ตรวจหา bishop (B) Queen (Q) โจมตี ทแยง
         x, y = king_pos
         for dx, dy in [(-1, -1), (-1, 1), (1, -1), (1, 1)]:
             nx, ny = x + dx, y + dy
@@ -46,7 +46,7 @@ def checkmate(board: str):
                     break
         return False
 
-    def is_rook_attacking():
+    def is_rook_attacking(): # ตรวจหา rook และ Queen (Q) โจมตี แนวตรง
         x, y = king_pos
         for dx, dy in [(-1, 0), (1, 0), (0, -1), (0, 1)]:
             nx, ny = x + dx, y + dy

@@ -1,16 +1,14 @@
-'''Main file - includes both Success and Fail cases'''
+'''Main file - includes both Success and Fail cases''' 
 from checkmate import checkmate
 
 def main():
-    print("=== Case 1: King is in check (Expect: Success) ===")
-    board1 = """\
+    board = """\
 ....
 .K..
 ....
-.R..\
-"""
-    checkmate(board1)
+.R.."""
+    checkmate(board)
 
 if __name__ == "__main__":
     main()
-
+    
