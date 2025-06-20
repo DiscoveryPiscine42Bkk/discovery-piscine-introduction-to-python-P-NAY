@@ -25,7 +25,7 @@ def checkmate(board: str):
     
     def is_pawn_attacking(): # ตรวจ Pawn (P) โจมตี
         x, y = king_pos
-        for dx, dy in [(-1, -1), (-1, 1)]:
+        for dx, dy in [(1, 1), (1, 1)]:
             nx, ny = x + dx, y + dy
             if in_bounds(nx, ny) and board[nx][ny] == 'P':
                 return True
